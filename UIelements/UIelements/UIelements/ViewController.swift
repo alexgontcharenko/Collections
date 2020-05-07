@@ -7,60 +7,52 @@
 //
 
 import UIKit
-class StudentClass {
-    let name: String
-    let surname: String
-    var phone: String
-    var age: Int
-    var picture: UIImage?
-    var email: String
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    init(name: String, surname: String, phone: String, age: Int, picture: UIImage?, email: String) {
-        self.name = name
-        self.surname = surname
-        self.phone = phone
-        self.age = age
-        self.picture = picture
-        self.email = email
-    }
-}
-
-struct StudentStruct {
-    let name: String
-    let surname: String
-    var phone: String
-    var age: Int
-    var picture: UIImage?
-    var email: String
-    }
-
-let student1 = StudentStruct(name: "", surname: "", phone: "", age: 1, email: "")
-
-let arrayOfStudents: [StudentClass] = [
-    StudentClass.init(name: "Alex", surname: "Aliev", phone: "0998765432", age: 26, picture: nil, email: "111@ukr.net"),
-    StudentClass.init(name: "Viktor", surname: "Vasiliev", phone: "0678893476", age: 25, picture: nil, email: "222@ukr.net"),
-    StudentClass.init(name: "Mike", surname: "Myers", phone: "57896", age: 19, picture: nil, email: "999@ukr.net")]
-
-class ViewController: UIViewController {
+    
+    @IBOutlet weak var studentTable: UITableView!
     @IBOutlet weak var studentLabel: UILabel!
     @IBOutlet weak var studentField: UITextField!
     @IBOutlet weak var studentButton: UIButton!
+    @IBOutlet weak var studentImage: UIImageView!
     
-    
+    var arrayOfStudents = [Student]()
+    var arrayOfStudentsEx = createStudentEx()
     override func viewDidLoad() {
         super.viewDidLoad()
         studentButton.setTitle("Find", for: .normal)
         studentLabel.text = "Find student"
+        self.arrayOfStudents = createStudent()
+        self.studentTable.delegate = self
+        self.studentTable.dataSource = self
     }
+    
+    func searchStudent(find: String) -> Student? {                        
+        return arrayOfStudents.first {$0.surname.lowercased() == find.lowercased()}
+    }
+    
     @IBAction func onPressButton(_ sender: Any) {
-        let getSurname = studentField.text!
-        for student in arrayOfStudents{
-            if getSurname == student.surname {
-                studentLabel.text = "Имя - \(student.name)\n Фамилия - \(student.surname)\n Телефон -  \(student.phone)\n Возраст - \(student.age)\n Эл. почта - \(student.email)"
-            }
+        if let student = searchStudent(find: studentField.text!){
+            studentLabel.text = student.toString()
+            studentImage.image = student.picture
+        } else {
+            studentLabel.text = "This student doesn't exist"
         }
         
     }
     
+    
+ public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return arrayOfStudentsEx.count
+    }
+    
+ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
+    cell.textLabel?.text = "\(arrayOfStudentsEx[indexPath.row].toString())"
+        return cell
+    }
+    
 }
+
 
