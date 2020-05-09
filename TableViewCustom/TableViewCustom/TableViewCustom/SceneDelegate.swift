@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  TableView Programmatically
+//  TableViewCustom
 //
 //  Created by Steew on 07.05.2020.
 //  Copyright © 2020 Steew. All rights reserved.
