@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         layout.minimumInteritemSpacing = 2
         layout.minimumLineSpacing = 2
-        layout.itemSize = CGSize(width: self.myCollection.frame.size.width - 20/2, height: self.myCollection.frame.size.height/3)
+        layout.itemSize = CGSize(width: (self.myCollection.frame.size.width - 20)/2, height: self.myCollection.frame.size.height/3)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
