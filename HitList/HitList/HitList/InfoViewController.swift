@@ -36,6 +36,9 @@ class InfoViewController: UIViewController {
         contactImage.image = arrayOfImages.randomElement()!
         
     }
-    
-
+    @IBAction func addToFavourites(_ sender: Any) {
+        let favouritesViewController = storyboard?.instantiateViewController(identifier: "FavouritesVC") as! FavouritesVC
+            favouritesViewController.favourites?.append(contact!)
+            DataShare.shared.favVC.favouritesTableView.reloadData()
+    }
 }

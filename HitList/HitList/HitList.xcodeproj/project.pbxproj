@@ -17,6 +17,8 @@
 		036A79EF247045D200F9087F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A79ED247045D200F9087F /* Cell.swift */; };
 		036A79F0247045D200F9087F /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036A79EE247045D200F9087F /* Cell.xib */; };
 		036A79F2247074F300F9087F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A79F1247074F300F9087F /* InfoViewController.swift */; };
+		03B9AEB82472F5250072777B /* AddContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AEB72472F5250072777B /* AddContactVC.swift */; };
+		03B9AEBA2472FEC60072777B /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AEB92472FEC60072777B /* FavouritesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		036A79ED247045D200F9087F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		036A79EE247045D200F9087F /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		036A79F1247074F300F9087F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		03B9AEB72472F5250072777B /* AddContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactVC.swift; sourceTree = "<group>"; };
+		03B9AEB92472FEC60072777B /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +71,12 @@
 				036A79B3247019E900F9087F /* AppDelegate.swift */,
 				036A79B5247019E900F9087F /* SceneDelegate.swift */,
 				036A79B7247019E900F9087F /* ViewController.swift */,
-				036A79B9247019E900F9087F /* Main.storyboard */,
+				036A79F1247074F300F9087F /* InfoViewController.swift */,
+				03B9AEB72472F5250072777B /* AddContactVC.swift */,
+				03B9AEB92472FEC60072777B /* FavouritesVC.swift */,
 				036A79ED247045D200F9087F /* Cell.swift */,
 				036A79EE247045D200F9087F /* Cell.xib */,
-				036A79F1247074F300F9087F /* InfoViewController.swift */,
+				036A79B9247019E900F9087F /* Main.storyboard */,
 				036A79BF247019EA00F9087F /* Assets.xcassets */,
 				036A79C1247019EA00F9087F /* LaunchScreen.storyboard */,
 				036A79C4247019EA00F9087F /* Info.plist */,
@@ -152,10 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				036A79B8247019E900F9087F /* ViewController.swift in Sources */,
+				03B9AEB82472F5250072777B /* AddContactVC.swift in Sources */,
 				036A79BE247019E900F9087F /* HitList.xcdatamodeld in Sources */,
 				036A79EF247045D200F9087F /* Cell.swift in Sources */,
 				036A79B4247019E900F9087F /* AppDelegate.swift in Sources */,
 				036A79F2247074F300F9087F /* InfoViewController.swift in Sources */,
+				03B9AEBA2472FEC60072777B /* FavouritesVC.swift in Sources */,
 				036A79B6247019E900F9087F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
