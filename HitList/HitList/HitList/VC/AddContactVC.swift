@@ -47,11 +47,11 @@ class AddContactVC: UIViewController {
             delegate.saveNewContact(name: nameField.text!, surname: surnameField.text!, phone: phoneField.text!, adress: adressField.text!, email: emailField.text!)
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notifName), object: nil)
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 }

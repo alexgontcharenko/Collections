@@ -15,15 +15,16 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func onRegisterAction(_ sender: Any) {
         if let registerVC = storyboard?.instantiateViewController(identifier: "RegisterVC") as? RegisterVC {
-            let navController = UINavigationController(rootViewController: registerVC)
-            navigationController?.present(navController, animated: true, completion: nil)
-            }
+            navigationController?.pushViewController(registerVC, animated: true)
         }
+    }
+    
     @IBAction func onLoginAction(_ sender: Any) {
         if let enterVC = storyboard?.instantiateViewController(identifier: "EnterVC") as? EnterVC {
         navigationController?.pushViewController(enterVC, animated: true)
-    }
+        }
     }
 }

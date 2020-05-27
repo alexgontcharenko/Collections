@@ -54,9 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func addName(_ sender: AnyObject) {
         if let addContactVC = storyboard?.instantiateViewController(identifier: "AddContactVC") as? AddContactVC {
-        let navController = UINavigationController(rootViewController: addContactVC)
+        navigationController?.pushViewController(addContactVC, animated: true)
             addContactVC.delegate = self
-        navigationController?.present(navController, animated: true, completion: nil)
         }
     }
         

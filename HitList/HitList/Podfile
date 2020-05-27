@@ -12,4 +12,8 @@ target 'HitList' do
   pod 'AFNetworking', '~> 4.0' 
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
 end
