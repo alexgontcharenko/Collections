@@ -101,4 +101,12 @@ class EnterVC: UIViewController {
         self.present(alert, animated: false) {
         }
     }
+    
+//    func loginButton(_ loginButton: FBLoginButton!, didCompleteWith result: LoginManagerLoginResult!, error: Error!) {
+//      if let error = error {
+//        print(error.localizedDescription)
+//        return
+//      }
+//      // ...
+//    }
 }

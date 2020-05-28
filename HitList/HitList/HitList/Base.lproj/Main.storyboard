@@ -458,7 +458,7 @@
                                     <constraint firstAttribute="height" constant="50" id="yvN-O3-CRe"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-Yk-en6" customClass="GIDSignInButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-Yk-en6" customClass="FBLoginButton">
                                 <rect key="frame" x="207" y="614" width="100" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -472,6 +472,7 @@
                         <constraints>
                             <constraint firstItem="K69-W0-uYO" firstAttribute="centerX" secondItem="K7w-Nz-buL" secondAttribute="centerX" id="2Iv-vC-4aP"/>
                             <constraint firstItem="7Iq-A4-I7O" firstAttribute="centerX" secondItem="K7w-Nz-buL" secondAttribute="centerX" constant="-50" id="2sK-Gv-gV9"/>
+                            <constraint firstItem="X9A-Yk-en6" firstAttribute="top" secondItem="7Iq-A4-I7O" secondAttribute="top" id="GID-ii-6pp"/>
                             <constraint firstItem="7Iq-A4-I7O" firstAttribute="top" secondItem="5is-Tb-Gax" secondAttribute="bottom" constant="50" id="Hky-Pu-wcd"/>
                             <constraint firstItem="X9A-Yk-en6" firstAttribute="centerX" secondItem="K7w-Nz-buL" secondAttribute="centerX" constant="50" id="SrS-bW-M0s"/>
                             <constraint firstItem="Yub-cT-feq" firstAttribute="top" secondItem="bdp-vG-23S" secondAttribute="bottom" id="VHU-cn-o6d"/>

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        //let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         return true
     }
     
