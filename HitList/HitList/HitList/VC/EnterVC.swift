@@ -29,7 +29,6 @@ class EnterVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-          // ...
         }
     }
     
@@ -39,15 +38,15 @@ class EnterVC: UIViewController {
     
     func onPrepareView() {
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
         enterLable.text = "Enter login and password"
-        onCheckSignInUser()
         let loginButton = FBLoginButton()
-        loginButton.permissions = ["public_profile", "email"]
-        loginButton.center = view.center
-        view.addSubview(loginButton)
-        if let token = AccessToken.current, !token.isExpired {} // User is logged in, do work such as go to next view controller.
-        
+        //loginButton.delegate = self
+        onCheckSignInUser()
+//        let loginButton = FBLoginButton()
+//        loginButton.permissions = ["public_profile", "email"]
+//        view.addSubview(loginButton)
+//        if let token = AccessToken.current, !token.isExpired {} // User is logged in, do work such as go to next view controller.
+//        
     }
     
     @IBAction func onLoginButton(_ sender: Any) {
@@ -73,7 +72,7 @@ class EnterVC: UIViewController {
         }
     }
 
-    
+    //logout method
     func onCheckSignInUser() {
         if Auth.auth().currentUser != nil {
             let firebaseAuth = Auth.auth()
@@ -83,7 +82,7 @@ class EnterVC: UIViewController {
                 print("Error signing out: №,", signOutError)
             }
         } else {
-            
+
         }
     }
     

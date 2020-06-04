@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JSON" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMR-7V-Fkb">
+                                <rect key="frame" x="184" y="438" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onTapRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gA3-sE-KNY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aC-gk-JtU">
+                                <rect key="frame" x="184" y="488" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onCodableTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uwI-zF-KQG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1m-vV-G33">
+                                <rect key="frame" x="184" y="538" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="alamofireTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayN-mm-0Ro"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2aC-gk-JtU" firstAttribute="top" secondItem="CMR-7V-Fkb" secondAttribute="bottom" constant="20" id="4yF-1U-vvL"/>
+                            <constraint firstItem="K1m-vV-G33" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZH3-xP-L0M"/>
+                            <constraint firstItem="2aC-gk-JtU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cbS-pg-7l9"/>
+                            <constraint firstItem="K1m-vV-G33" firstAttribute="top" secondItem="2aC-gk-JtU" secondAttribute="bottom" constant="20" id="fI6-bh-qwX"/>
+                            <constraint firstItem="CMR-7V-Fkb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pCq-fI-nvL"/>
+                            <constraint firstItem="CMR-7V-Fkb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xVd-hS-nCh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="alamofireButton" destination="K1m-vV-G33" id="NiF-0t-3mg"/>
+                        <outlet property="codableButton" destination="2aC-gk-JtU" id="gcz-Nh-e3c"/>
+                        <outlet property="requestButton" destination="CMR-7V-Fkb" id="GTT-7e-nUf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="138"/>
+        </scene>
+    </scenes>
+</document>
