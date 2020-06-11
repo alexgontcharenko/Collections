@@ -13,4 +13,5 @@ target 'FootballManager' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod 'SwiftyJSON'
 end

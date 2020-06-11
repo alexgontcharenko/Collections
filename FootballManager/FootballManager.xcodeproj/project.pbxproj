@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031149E5249238EF00B0ACC6 /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031149E4249238EF00B0ACC6 /* StatisticsModel.swift */; };
+		031149E7249259F200B0ACC6 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031149E6249259F200B0ACC6 /* StatisticsViewController.swift */; };
 		0319F81F2488EBB700330A8E /* TeamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319F81D2488EBB700330A8E /* TeamsCell.swift */; };
 		0319F8202488EBB700330A8E /* TeamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0319F81E2488EBB700330A8E /* TeamsCell.xib */; };
+		031D919F24917CEA006C16F0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D919E24917CEA006C16F0 /* BaseViewController.swift */; };
+		031D91A124917CFC006C16F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D91A024917CFC006C16F0 /* Constants.swift */; };
+		031D91A324917E8F006C16F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D91A224917E8F006C16F0 /* NetworkManager.swift */; };
 		038C706D2486F60D00A00369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C706C2486F60D00A00369 /* AppDelegate.swift */; };
 		038C706F2486F60D00A00369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C706E2486F60D00A00369 /* SceneDelegate.swift */; };
 		038C70712486F60D00A00369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C70702486F60D00A00369 /* LoginViewController.swift */; };
@@ -18,13 +23,18 @@
 		038C70812486F7CC00A00369 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038C70802486F7CC00A00369 /* GoogleService-Info.plist */; };
 		03B82D1824882845003E55E5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B82D1724882845003E55E5 /* RegisterViewController.swift */; };
 		03B82D1A248828AD003E55E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B82D19248828AD003E55E5 /* MainViewController.swift */; };
-		03B82D1D248847C8003E55E5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B82D1C248847C8003E55E5 /* Models.swift */; };
+		03B82D1D248847C8003E55E5 /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B82D1C248847C8003E55E5 /* TeamsModel.swift */; };
 		C56069EAC9BAA4829D77602D /* Pods_FootballManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D0207ED3B31D8FB6935AAE /* Pods_FootballManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031149E4249238EF00B0ACC6 /* StatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
+		031149E6249259F200B0ACC6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		0319F81D2488EBB700330A8E /* TeamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCell.swift; sourceTree = "<group>"; };
 		0319F81E2488EBB700330A8E /* TeamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsCell.xib; sourceTree = "<group>"; };
+		031D919E24917CEA006C16F0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		031D91A024917CFC006C16F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		031D91A224917E8F006C16F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		038C70692486F60D00A00369 /* FootballManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038C706C2486F60D00A00369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		038C706E2486F60D00A00369 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +46,7 @@
 		038C70802486F7CC00A00369 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03B82D1724882845003E55E5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		03B82D19248828AD003E55E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		03B82D1C248847C8003E55E5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		03B82D1C248847C8003E55E5 /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
 		82D0207ED3B31D8FB6935AAE /* Pods_FootballManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4904478622A73D2A849A70 /* Pods-FootballManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballManager.debug.xcconfig"; path = "Target Support Files/Pods-FootballManager/Pods-FootballManager.debug.xcconfig"; sourceTree = "<group>"; };
 		E5C1442B79F76983556D9B92 /* Pods-FootballManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballManager.release.xcconfig"; path = "Target Support Files/Pods-FootballManager/Pods-FootballManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +73,17 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		031D919D24917CAF006C16F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				031D91A024917CFC006C16F0 /* Constants.swift */,
+				031D91A224917E8F006C16F0 /* NetworkManager.swift */,
+				03B82D1C248847C8003E55E5 /* TeamsModel.swift */,
+				031149E4249238EF00B0ACC6 /* StatisticsModel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		038C70602486F60D00A00369 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +105,7 @@
 		038C706B2486F60D00A00369 /* FootballManager */ = {
 			isa = PBXGroup;
 			children = (
+				031D919D24917CAF006C16F0 /* Helpers */,
 				03B82D1B248828FC003E55E5 /* ViewControllers */,
 				0319F8212489183500330A8E /* CustomCell */,
 				038C706C2486F60D00A00369 /* AppDelegate.swift */,
@@ -93,7 +115,6 @@
 				038C70772486F60E00A00369 /* LaunchScreen.storyboard */,
 				038C707A2486F60E00A00369 /* Info.plist */,
 				038C70802486F7CC00A00369 /* GoogleService-Info.plist */,
-				03B82D1C248847C8003E55E5 /* Models.swift */,
 			);
 			path = FootballManager;
 			sourceTree = "<group>";
@@ -101,9 +122,11 @@
 		03B82D1B248828FC003E55E5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				031D919E24917CEA006C16F0 /* BaseViewController.swift */,
 				03B82D1724882845003E55E5 /* RegisterViewController.swift */,
 				03B82D19248828AD003E55E5 /* MainViewController.swift */,
 				038C70702486F60D00A00369 /* LoginViewController.swift */,
+				031149E6249259F200B0ACC6 /* StatisticsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,11 +285,16 @@
 			files = (
 				038C70712486F60D00A00369 /* LoginViewController.swift in Sources */,
 				0319F81F2488EBB700330A8E /* TeamsCell.swift in Sources */,
+				031149E5249238EF00B0ACC6 /* StatisticsModel.swift in Sources */,
+				031149E7249259F200B0ACC6 /* StatisticsViewController.swift in Sources */,
 				038C706D2486F60D00A00369 /* AppDelegate.swift in Sources */,
 				038C706F2486F60D00A00369 /* SceneDelegate.swift in Sources */,
-				03B82D1D248847C8003E55E5 /* Models.swift in Sources */,
+				03B82D1D248847C8003E55E5 /* TeamsModel.swift in Sources */,
+				031D91A324917E8F006C16F0 /* NetworkManager.swift in Sources */,
+				031D919F24917CEA006C16F0 /* BaseViewController.swift in Sources */,
 				03B82D1824882845003E55E5 /* RegisterViewController.swift in Sources */,
 				03B82D1A248828AD003E55E5 /* MainViewController.swift in Sources */,
+				031D91A124917CFC006C16F0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

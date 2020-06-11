@@ -6,17 +6,25 @@
 //  Copyright © 2020 Steew. All rights reserved.
 //
 
+
 import UIKit
 import Firebase
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     @IBOutlet weak var teamsTableView: UITableView!
     
+    var networkManager = NetworkManager()
     var teams = [Team]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTeamsRequest()
+        networkManager.getTeamsRequest(url: API_TEAMS, retData: .teamsData)
+        networkManager.onCompletion = { currentData in
+            self.teams = currentData.api.teams
+            DispatchQueue.main.async {
+                self.teamsTableView.reloadData()
+            }
+        }
         teamsTableView.dataSource = self
         teamsTableView.delegate = self
         teamsTableView.register(UINib(nibName: String(describing: TeamsCell.self), bundle: nil), forCellReuseIdentifier: "TeamsCell")
@@ -42,39 +50,6 @@ class MainViewController: UIViewController {
             print("auth error")
         }
     }
-    
-    func getTeamsRequest() {
-        let headers = [
-            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-            "x-rapidapi-key": "499d366ab9mshbf8e9b29184ba1dp183b87jsn72eebb802141"
-        ]
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api-football-v1.p.rapidapi.com/v2/teams/league/2")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        //var array = [Team]()
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error as Any)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                //print(httpResponse as Any)
-                guard let data = data else { return }
-                let decoder = JSONDecoder()
-                do {
-                    let currentData = try decoder.decode(CurrentData.self, from: data)
-                    self.teams = currentData.api.teams
-                } catch {
-                    print(error)
-                }
-                print(self.teams.count)
-            }
-        })
-        dataTask.resume()
-    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -91,5 +66,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let team = teams[indexPath.row]
+        let url = API_STATISTICS + String(team.teamID)
+        networkManager.getTeamsRequest(url: url, retData: .statisticsData)
+        
+        let vc = storyboard?.instantiateViewController(identifier: "StatisticsViewController") as! StatisticsViewController
+        present(vc, animated: true)
+    }
     
 }
