@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="UserProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-Mk-NQg">
+                                <rect key="frame" x="184" y="438" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Unw-Rp-ePV" kind="presentation" modalPresentationStyle="fullScreen" id="OhJ-k8-3es"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xs6-Mk-NQg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hin-BZ-f46"/>
+                            <constraint firstItem="Xs6-Mk-NQg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gPY-Ab-7R4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="createButton" destination="Xs6-Mk-NQg" id="XGO-Jz-o1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Create a new User-->
+        <scene sceneID="Kqn-ao-QTl">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ufQ-Zb-lKD" customClass="SecondViewController" customModule="UserProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nE3-de-Rtu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqb-iH-cod">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5SA-TI-HXa">
+                                <rect key="frame" x="20" y="172" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTap:" destination="ufQ-Zb-lKD" eventType="editingDidEnd" id="4TW-rL-3K6"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bVD-gC-zKd" firstAttribute="trailing" secondItem="5SA-TI-HXa" secondAttribute="trailing" constant="20" id="NTt-BW-Lox"/>
+                            <constraint firstItem="uqb-iH-cod" firstAttribute="leading" secondItem="bVD-gC-zKd" secondAttribute="leading" constant="20" id="NxZ-sa-Rlw"/>
+                            <constraint firstItem="bVD-gC-zKd" firstAttribute="trailing" secondItem="uqb-iH-cod" secondAttribute="trailing" constant="20" id="ODm-pt-uBr"/>
+                            <constraint firstItem="uqb-iH-cod" firstAttribute="top" secondItem="bVD-gC-zKd" secondAttribute="top" constant="20" id="XbT-3g-lI2"/>
+                            <constraint firstItem="5SA-TI-HXa" firstAttribute="leading" secondItem="bVD-gC-zKd" secondAttribute="leading" constant="20" id="lRD-OA-Y0f"/>
+                            <constraint firstItem="5SA-TI-HXa" firstAttribute="top" secondItem="uqb-iH-cod" secondAttribute="bottom" constant="30" id="vtn-na-Bjd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bVD-gC-zKd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a new User" id="M4c-5n-YgV"/>
+                    <connections>
+                        <outlet property="ageField" destination="5SA-TI-HXa" id="Us6-hu-NEw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9b2-ha-EZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="879"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5N0-76-Tuc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Unw-Rp-ePV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="heA-Et-rvx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIl-6H-DS5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ufQ-Zb-lKD" kind="relationship" relationship="rootViewController" id="4rc-jG-bJ7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbY-d3-W6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="879"/>
+        </scene>
+    </scenes>
+</document>

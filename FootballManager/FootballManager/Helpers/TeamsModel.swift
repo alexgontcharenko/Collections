@@ -56,13 +56,5 @@ enum VenueSurface: String, Codable {
     case grass = "grass"
 }
 
-//1. Get valid string
-//let string = "https://images.freeimages.com/images/large-previews/f2c/effi-1-1366221.jpg"
-//
-//if let image = getImage(from: string) {
-//    //5. Apply image
-//    cell.imageView.image = image
-//}
-
 
 
