@@ -9,4 +9,5 @@ target 'CountriesTraveller' do
   pod 'Alamofire', '~> 5.2'
   pod 'FirebaseUI/Auth'
   pod 'SVProgressHUD'
+  pod "FlagPhoneNumber"
 end

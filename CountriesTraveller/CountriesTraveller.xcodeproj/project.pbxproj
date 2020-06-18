@@ -25,6 +25,9 @@
 		03A1115B24961CDC00A3ED98 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1115A24961CDC00A3ED98 /* DateViewController.swift */; };
 		03A1115F2496231400A3ED98 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1115E2496231400A3ED98 /* Alerts.swift */; };
 		03A1116124962C5D00A3ED98 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1116024962C5D00A3ED98 /* ImageViewController.swift */; };
+		03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AEC2497C50000BB7929 /* LocationViewController.swift */; };
+		03EE7AEF249B829000BB7929 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AEE249B829000BB7929 /* PhoneViewController.swift */; };
+		03EE7AF3249B99C800BB7929 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */; };
 		38BB09F6ED475A86CB706199 /* Pods_CountriesTraveller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EC2DC59EF737C3442B4311 /* Pods_CountriesTraveller.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		03A1115A24961CDC00A3ED98 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		03A1115E2496231400A3ED98 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		03A1116024962C5D00A3ED98 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		03EE7AEC2497C50000BB7929 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		03EE7AEE249B829000BB7929 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		37EC2DC59EF737C3442B4311 /* Pods_CountriesTraveller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesTraveller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A119F4338B79053D83E41B17 /* Pods-CountriesTraveller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTraveller.debug.xcconfig"; path = "Target Support Files/Pods-CountriesTraveller/Pods-CountriesTraveller.debug.xcconfig"; sourceTree = "<group>"; };
 		FFA2F07DC8BE0188EEFBBD71 /* Pods-CountriesTraveller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTraveller.release.xcconfig"; path = "Target Support Files/Pods-CountriesTraveller/Pods-CountriesTraveller.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,14 +95,13 @@
 			children = (
 				03A11157249618A300A3ED98 /* Extensions */,
 				03A11155249615DE00A3ED98 /* Managers */,
-				03A1112B249607EA00A3ED98 /* AppDelegate.swift */,
 				03A11142249613F900A3ED98 /* Models */,
 				03A1113F24960CD200A3ED98 /* Helpers */,
-				03A1112D249607EA00A3ED98 /* SceneDelegate.swift */,
 				03A111562496161200A3ED98 /* ViewControllers */,
-				03A11131249607EA00A3ED98 /* Main.storyboard */,
+				03EE7AE72497AEFA00BB7929 /* Storyboards */,
+				03A1112D249607EA00A3ED98 /* SceneDelegate.swift */,
+				03A1112B249607EA00A3ED98 /* AppDelegate.swift */,
 				03A11134249607EB00A3ED98 /* Assets.xcassets */,
-				03A11136249607EB00A3ED98 /* LaunchScreen.storyboard */,
 				03A11139249607EB00A3ED98 /* Info.plist */,
 			);
 			path = CountriesTraveller;
@@ -154,6 +159,9 @@
 				03A1112F249607EA00A3ED98 /* LoginViewController.swift */,
 				03A1115A24961CDC00A3ED98 /* DateViewController.swift */,
 				03A1116024962C5D00A3ED98 /* ImageViewController.swift */,
+				03EE7AEC2497C50000BB7929 /* LocationViewController.swift */,
+				03EE7AEE249B829000BB7929 /* PhoneViewController.swift */,
+				03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,6 +172,15 @@
 				03A11158249618B600A3ED98 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03EE7AE72497AEFA00BB7929 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				03A11131249607EA00A3ED98 /* Main.storyboard */,
+				03A11136249607EB00A3ED98 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		27729669866F6B53C6E7FC5A /* Frameworks */ = {
@@ -321,16 +338,19 @@
 				03A1114B2496151000A3ED98 /* NetworkHelpers.swift in Sources */,
 				03A1112C249607EA00A3ED98 /* AppDelegate.swift in Sources */,
 				03A11159249618B600A3ED98 /* String+Extensions.swift in Sources */,
+				03EE7AF3249B99C800BB7929 /* CountriesViewController.swift in Sources */,
 				03A1115B24961CDC00A3ED98 /* DateViewController.swift in Sources */,
 				03A1112E249607EA00A3ED98 /* SceneDelegate.swift in Sources */,
 				03A1116124962C5D00A3ED98 /* ImageViewController.swift in Sources */,
 				03A1114C2496151000A3ED98 /* NetworkManager.swift in Sources */,
+				03EE7AEF249B829000BB7929 /* PhoneViewController.swift in Sources */,
 				03A11154249615BA00A3ED98 /* AuthError.swift in Sources */,
 				03A111442496140700A3ED98 /* User.swift in Sources */,
 				03A11152249615B500A3ED98 /* AuthManager.swift in Sources */,
 				03A11150249615AF00A3ED98 /* Validators.swift in Sources */,
 				03A1115F2496231400A3ED98 /* Alerts.swift in Sources */,
 				03A1114124960CE200A3ED98 /* Constants.swift in Sources */,
+				03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

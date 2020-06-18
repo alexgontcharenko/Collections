@@ -13,18 +13,50 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var avatarLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var user = UserProfile()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareView()
+        prepareNextButton()
+        prepareBackButton()
+        prepareImage()
     }
     
     func prepareView() {
         avatarLabel.text = kAvatarLabel
         avatarButton.setTitle("", for: .normal)
         avatarButton.addTarget(self, action: #selector(onOpenImagePicker), for: .touchUpInside)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+    }
+    
+    func prepareNextButton() {
+        nextButton.setTitle(kNextButtonTitle, for: .normal)
+        nextButton.setTitleColor(UIColor.black, for: .normal)
+        nextButton.layer.cornerRadius = 0.5 * nextButton.frame.size.width
+        nextButton.clipsToBounds = true
+        nextButton.backgroundColor = UIColor.lightText
+        
+        nextButton.addTarget(self, action: #selector(onTapNextButton), for: .touchUpInside)
+    }
+    
+    func prepareBackButton() {
+        backButton.setTitle(kBackButtonTitle, for: .normal)
+        backButton.setTitleColor(UIColor.black, for: .normal)
+        backButton.layer.cornerRadius = 0.5 * backButton.frame.size.width
+        backButton.clipsToBounds = true
+        backButton.backgroundColor = UIColor.lightText
+        
+        backButton.addTarget(self, action: #selector(onTapBackButton), for: .touchUpInside)
+    }
+    
+    func prepareImage() {
+        avatarImage.backgroundColor = UIColor.lightText
+        avatarImage.clipsToBounds = true
+        avatarImage.layer.cornerRadius = 0.5 * avatarImage.frame.size.width
     }
     
     @objc func onOpenImagePicker() {
@@ -83,6 +115,17 @@ class ImageViewController: UIViewController {
     func prepareAvatar() {
         if let image = user.image {
             avatarImage.image = image
+        }
+    }
+    
+    @objc func onTapBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func onTapNextButton() {
+        if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LocationViewController") as? LocationViewController{
+            vc.user = user
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

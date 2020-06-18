@@ -15,4 +15,6 @@ struct UserProfile {
     var email: String = ""
     var gender: String = ""
     var image: UIImage?
+    var bornDate: String = ""
+    var phone: String = ""
 }
