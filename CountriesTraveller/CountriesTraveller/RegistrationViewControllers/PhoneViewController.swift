@@ -10,8 +10,9 @@ import UIKit
 import FlagPhoneNumber
 
 class PhoneViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var finishButton: UIButton!
     
-    let phoneNumberTextField = FPNTextField()//(frame: CGRect(x: , y: 150, width: 150, height: 50))
+    let phoneNumberTextField = FPNTextField()
     var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
     var user = UserProfile()
 
@@ -19,6 +20,7 @@ class PhoneViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         prepareView()
         prepareList()
+        prepareFinishButton()
     }
     
     func prepareView() {
@@ -31,6 +33,30 @@ class PhoneViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.centerYAnchor.constraint(equalTo: (self.view?.centerYAnchor)!).isActive = true
         phoneNumberTextField.centerXAnchor.constraint(equalTo: (self.view?.centerXAnchor)!).isActive = true
         phoneNumberTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
+    }
+    
+    func prepareFinishButton() {
+        finishButton.setTitle(kFinishButtonTitle, for: .normal)
+        finishButton.setTitleColor(UIColor.black, for: .normal)
+        finishButton.layer.cornerRadius = 0.5 * finishButton.frame.size.width
+        finishButton.clipsToBounds = true
+        finishButton.backgroundColor = UIColor.lightText
+        
+        finishButton.addTarget(self, action: #selector(onTapFinishButton), for: .touchUpInside)
+    }
+    
+    @objc func onTapFinishButton() {
+        toSignInScreen()
+    }
+    
+    func toSignInScreen() {
+        let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        UIView.transition(with: window!, duration: 1, options: .transitionCurlDown, animations: {
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        })
     }
     
     func prepareList() {

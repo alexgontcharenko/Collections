@@ -6,8 +6,8 @@
 //  Copyright © 2020 Oleksandr Kurtsev. All rights reserved.
 //
 
-import UIKit
-import FirebaseUI
+import Foundation
+import Firebase
 
 class AuthManager {
     
@@ -15,12 +15,18 @@ class AuthManager {
     
     static let shared = AuthManager()
     private let auth = Auth.auth()
+    private init() {}
     
-    // MARK: - Private Method
+    // MARK: - Methods
     
     func login(email: String?, password: String?, completion: @escaping (Result<User, Error>) -> Void) {
         
         guard let email = email, let password = password else {
+            completion(.failure(AuthError.notFilled))
+            return
+        }
+        
+        guard Validators.isFilledTextFields(email, password) else {
             completion(.failure(AuthError.notFilled))
             return
         }
@@ -36,12 +42,17 @@ class AuthManager {
     
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void) {
         
-        guard Validators.isFilled(email, password, confirmPassword) else {
+        guard let email = email, let password = password, let confirmPassword = confirmPassword else {
             completion(.failure(AuthError.notFilled))
             return
         }
         
-        guard password == confirmPassword else {
+        guard Validators.isFilledTextFields(email, password, confirmPassword) else {
+            completion(.failure(AuthError.notFilled))
+            return
+        }
+        
+        guard Validators.isPasswordsMatched(password, confirmPassword) else {
             completion(.failure(AuthError.passwordsNotMatched))
             return
         }
@@ -51,7 +62,7 @@ class AuthManager {
             return
         }
         
-        auth.createUser(withEmail: email!, password: password!) { (result, error) in
+        auth.createUser(withEmail: email, password: password) { (result, error) in
             guard let result = result else {
                 completion(.failure(error!))
                 return
@@ -60,12 +71,9 @@ class AuthManager {
         }
     }
     
-    func remindPassword(email: String?, completion: @escaping (Result<Bool, Error>) -> Void) {
-
-        guard let email = email, Validators.isValidEmail(email) else {
-            completion(.failure(AuthError.invalidEmail))
-            return
-        }
+    
+    func resetPassword(email: String?, completion: @escaping (Result<Bool, Error>) -> Void) {
+        guard let email = email else { return }
         
         auth.sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
@@ -76,4 +84,3 @@ class AuthManager {
         }
     }
 }
-

@@ -13,6 +13,7 @@ struct UserProfile {
     var firstName: String = ""
     var lastName: String = ""
     var email: String = ""
+    var password: String = ""
     var gender: String = ""
     var image: UIImage?
     var bornDate: String = ""

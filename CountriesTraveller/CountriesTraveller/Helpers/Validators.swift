@@ -47,4 +47,35 @@ class Validators {
             return false
         }
     }
+    
+    static func isFilledTextFields(_ textOne: String?, _ textTwo: String?) -> Bool {
+        guard let textOne = textOne, let textTwo = textTwo else { return false }
+        guard !textOne.isEmpty && !textTwo.isEmpty else { return false }
+        return true
+    }
+    
+    static func isFilledTextFields(_ textOne: String?, _ textTwo: String?, _ textThree: String?) -> Bool {
+        guard let textOne = textOne, let textTwo = textTwo, let textThree = textThree else { return false }
+        guard !textOne.isEmpty && !textTwo.isEmpty && !textThree.isEmpty else { return false }
+        return true
+    }
+    
+    static func isPasswordsMatched(_ passOne: String?, _ passTwo: String?) -> Bool {
+        guard let passOne = passOne, let passTwo = passTwo else { return false }
+        guard passOne == passTwo else { return false }
+        return true
+    }
+    
+    static func isMissingSpaces(_ string: String?) -> Bool {
+        guard let string = string else { return false }
+        guard string.trimmingCharacters(in: .whitespacesAndNewlines).count >= 3 else { return false }
+        return true
+    }
+    
+    static func isValidPassword(myPassword : String) -> Bool {
+
+        let passwordReg =  ("(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6,}")
+        let passwordTesting = NSPredicate(format: "SELF MATCHES %@", passwordReg)
+        return passwordTesting.evaluate(with: myPassword)
+    }
 }

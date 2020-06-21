@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,31 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="td2-Im-wlu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vXI-Oe-RV9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CountriesTraveller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwR-HL-3G4">
-                                <rect key="frame" x="6" y="406.5" width="402.5" height="93.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All rights are reserved. (c) 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4L-gg-UKx">
-                                <rect key="frame" x="86" y="791" width="242" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="td2-Im-wlu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CuS-GI-DBQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T4L-gg-UKx" secondAttribute="bottom" constant="50" id="V5p-sk-Jsr"/>
-                            <constraint firstAttribute="bottom" secondItem="td2-Im-wlu" secondAttribute="bottom" id="ZKE-8K-5AA"/>
-                            <constraint firstItem="td2-Im-wlu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b0a-gh-e3e"/>
-                            <constraint firstAttribute="trailing" secondItem="td2-Im-wlu" secondAttribute="trailing" id="m9s-jJ-B3y"/>
-                            <constraint firstItem="T4L-gg-UKx" firstAttribute="centerX" secondItem="td2-Im-wlu" secondAttribute="centerX" id="um9-fq-LYa"/>
+                            <constraint firstItem="vXI-Oe-RV9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Eo-iS-2l9"/>
+                            <constraint firstItem="vXI-Oe-RV9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6US-QC-N6p"/>
+                            <constraint firstAttribute="bottom" secondItem="vXI-Oe-RV9" secondAttribute="bottom" id="Ncx-if-QRT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vXI-Oe-RV9" secondAttribute="trailing" id="eEm-GA-rR2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -50,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="640" height="1136"/>
+        <image name="launchBackground" width="614" height="1325"/>
     </resources>
 </document>

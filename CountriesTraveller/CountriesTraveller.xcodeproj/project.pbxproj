@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03510F0D249E9560002CB5D4 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F0C249E9560002CB5D4 /* Country.swift */; };
+		03510F0F249E9957002CB5D4 /* Countries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03510F0E249E9957002CB5D4 /* Countries.storyboard */; };
+		03510F11249E9A23002CB5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03510F10249E9A23002CB5D4 /* GoogleService-Info.plist */; };
+		03510F14249E9B32002CB5D4 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F13249E9B32002CB5D4 /* CountriesViewController.swift */; };
+		03510F19249E9C97002CB5D4 /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F16249E9C97002CB5D4 /* NetworkHelpers.swift */; };
+		03510F1A249E9C97002CB5D4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F17249E9C97002CB5D4 /* NetworkManager.swift */; };
+		03510F1B249E9C97002CB5D4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F18249E9C97002CB5D4 /* NetworkError.swift */; };
+		03510F1D249EA470002CB5D4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F1C249EA470002CB5D4 /* SignInViewController.swift */; };
+		03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F21249EC8EF002CB5D4 /* CountryCell.swift */; };
+		03510F24249EC8EF002CB5D4 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03510F22249EC8EF002CB5D4 /* CountryCell.xib */; };
+		03510F26249ED2DE002CB5D4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F25249ED2DE002CB5D4 /* InfoViewController.swift */; };
 		03A1112C249607EA00A3ED98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112B249607EA00A3ED98 /* AppDelegate.swift */; };
 		03A1112E249607EA00A3ED98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112D249607EA00A3ED98 /* SceneDelegate.swift */; };
 		03A11130249607EA00A3ED98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112F249607EA00A3ED98 /* LoginViewController.swift */; };
@@ -15,9 +26,6 @@
 		03A11138249607EB00A3ED98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A11136249607EB00A3ED98 /* LaunchScreen.storyboard */; };
 		03A1114124960CE200A3ED98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1114024960CE200A3ED98 /* Constants.swift */; };
 		03A111442496140700A3ED98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A111432496140700A3ED98 /* User.swift */; };
-		03A1114B2496151000A3ED98 /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A111482496151000A3ED98 /* NetworkHelpers.swift */; };
-		03A1114C2496151000A3ED98 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A111492496151000A3ED98 /* NetworkManager.swift */; };
-		03A1114D2496151000A3ED98 /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1114A2496151000A3ED98 /* NetworkURL.swift */; };
 		03A11150249615AF00A3ED98 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1114F249615AF00A3ED98 /* Validators.swift */; };
 		03A11152249615B500A3ED98 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A11151249615B500A3ED98 /* AuthManager.swift */; };
 		03A11154249615BA00A3ED98 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A11153249615B900A3ED98 /* AuthError.swift */; };
@@ -27,11 +35,21 @@
 		03A1116124962C5D00A3ED98 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1116024962C5D00A3ED98 /* ImageViewController.swift */; };
 		03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AEC2497C50000BB7929 /* LocationViewController.swift */; };
 		03EE7AEF249B829000BB7929 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AEE249B829000BB7929 /* PhoneViewController.swift */; };
-		03EE7AF3249B99C800BB7929 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */; };
 		38BB09F6ED475A86CB706199 /* Pods_CountriesTraveller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EC2DC59EF737C3442B4311 /* Pods_CountriesTraveller.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03510F0C249E9560002CB5D4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		03510F0E249E9957002CB5D4 /* Countries.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Countries.storyboard; sourceTree = "<group>"; };
+		03510F10249E9A23002CB5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03510F13249E9B32002CB5D4 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		03510F16249E9C97002CB5D4 /* NetworkHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
+		03510F17249E9C97002CB5D4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		03510F18249E9C97002CB5D4 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		03510F1C249EA470002CB5D4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		03510F21249EC8EF002CB5D4 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		03510F22249EC8EF002CB5D4 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		03510F25249ED2DE002CB5D4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		03A11128249607EA00A3ED98 /* CountriesTraveller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesTraveller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A1112B249607EA00A3ED98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03A1112D249607EA00A3ED98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,9 +60,6 @@
 		03A11139249607EB00A3ED98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A1114024960CE200A3ED98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		03A111432496140700A3ED98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		03A111482496151000A3ED98 /* NetworkHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
-		03A111492496151000A3ED98 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		03A1114A2496151000A3ED98 /* NetworkURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
 		03A1114F249615AF00A3ED98 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		03A11151249615B500A3ED98 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		03A11153249615B900A3ED98 /* AuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -54,7 +69,6 @@
 		03A1116024962C5D00A3ED98 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		03EE7AEC2497C50000BB7929 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		03EE7AEE249B829000BB7929 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
-		03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		37EC2DC59EF737C3442B4311 /* Pods_CountriesTraveller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesTraveller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A119F4338B79053D83E41B17 /* Pods-CountriesTraveller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTraveller.debug.xcconfig"; path = "Target Support Files/Pods-CountriesTraveller/Pods-CountriesTraveller.debug.xcconfig"; sourceTree = "<group>"; };
 		FFA2F07DC8BE0188EEFBBD71 /* Pods-CountriesTraveller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTraveller.release.xcconfig"; path = "Target Support Files/Pods-CountriesTraveller/Pods-CountriesTraveller.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +86,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03510F12249E9AFD002CB5D4 /* CountriesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03510F1E249EC8A2002CB5D4 /* CustomCell */,
+				03510F13249E9B32002CB5D4 /* CountriesViewController.swift */,
+				03510F25249ED2DE002CB5D4 /* InfoViewController.swift */,
+			);
+			path = CountriesViewControllers;
+			sourceTree = "<group>";
+		};
+		03510F15249E9C97002CB5D4 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				03510F16249E9C97002CB5D4 /* NetworkHelpers.swift */,
+				03510F17249E9C97002CB5D4 /* NetworkManager.swift */,
+				03510F18249E9C97002CB5D4 /* NetworkError.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		03510F1E249EC8A2002CB5D4 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				03510F21249EC8EF002CB5D4 /* CountryCell.swift */,
+				03510F22249EC8EF002CB5D4 /* CountryCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		03A1111F249607EA00A3ED98 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +140,14 @@
 				03A11155249615DE00A3ED98 /* Managers */,
 				03A11142249613F900A3ED98 /* Models */,
 				03A1113F24960CD200A3ED98 /* Helpers */,
-				03A111562496161200A3ED98 /* ViewControllers */,
+				03510F12249E9AFD002CB5D4 /* CountriesViewControllers */,
+				03A111562496161200A3ED98 /* RegistrationViewControllers */,
 				03EE7AE72497AEFA00BB7929 /* Storyboards */,
 				03A1112D249607EA00A3ED98 /* SceneDelegate.swift */,
 				03A1112B249607EA00A3ED98 /* AppDelegate.swift */,
 				03A11134249607EB00A3ED98 /* Assets.xcassets */,
 				03A11139249607EB00A3ED98 /* Info.plist */,
+				03510F10249E9A23002CB5D4 /* GoogleService-Info.plist */,
 			);
 			path = CountriesTraveller;
 			sourceTree = "<group>";
@@ -121,18 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				03A111432496140700A3ED98 /* User.swift */,
+				03510F0C249E9560002CB5D4 /* Country.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		03A111472496151000A3ED98 /* NetworkManagers */ = {
-			isa = PBXGroup;
-			children = (
-				03A111482496151000A3ED98 /* NetworkHelpers.swift */,
-				03A111492496151000A3ED98 /* NetworkManager.swift */,
-				03A1114A2496151000A3ED98 /* NetworkURL.swift */,
-			);
-			path = NetworkManagers;
 			sourceTree = "<group>";
 		};
 		03A1114E2496159F00A3ED98 /* AuthManager */ = {
@@ -147,23 +183,23 @@
 		03A11155249615DE00A3ED98 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				03A111472496151000A3ED98 /* NetworkManagers */,
+				03510F15249E9C97002CB5D4 /* NetworkManager */,
 				03A1114E2496159F00A3ED98 /* AuthManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		03A111562496161200A3ED98 /* ViewControllers */ = {
+		03A111562496161200A3ED98 /* RegistrationViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				03510F1C249EA470002CB5D4 /* SignInViewController.swift */,
 				03A1112F249607EA00A3ED98 /* LoginViewController.swift */,
 				03A1115A24961CDC00A3ED98 /* DateViewController.swift */,
 				03A1116024962C5D00A3ED98 /* ImageViewController.swift */,
 				03EE7AEC2497C50000BB7929 /* LocationViewController.swift */,
 				03EE7AEE249B829000BB7929 /* PhoneViewController.swift */,
-				03EE7AF2249B99C700BB7929 /* CountriesViewController.swift */,
 			);
-			path = ViewControllers;
+			path = RegistrationViewControllers;
 			sourceTree = "<group>";
 		};
 		03A11157249618A300A3ED98 /* Extensions */ = {
@@ -178,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				03A11131249607EA00A3ED98 /* Main.storyboard */,
+				03510F0E249E9957002CB5D4 /* Countries.storyboard */,
 				03A11136249607EB00A3ED98 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -261,8 +298,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03510F24249EC8EF002CB5D4 /* CountryCell.xib in Resources */,
 				03A11138249607EB00A3ED98 /* LaunchScreen.storyboard in Resources */,
 				03A11135249607EB00A3ED98 /* Assets.xcassets in Resources */,
+				03510F11249E9A23002CB5D4 /* GoogleService-Info.plist in Resources */,
+				03510F0F249E9957002CB5D4 /* Countries.storyboard in Resources */,
 				03A11133249607EA00A3ED98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,24 +373,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03A1114D2496151000A3ED98 /* NetworkURL.swift in Sources */,
+				03510F1A249E9C97002CB5D4 /* NetworkManager.swift in Sources */,
+				03510F19249E9C97002CB5D4 /* NetworkHelpers.swift in Sources */,
 				03A11130249607EA00A3ED98 /* LoginViewController.swift in Sources */,
-				03A1114B2496151000A3ED98 /* NetworkHelpers.swift in Sources */,
 				03A1112C249607EA00A3ED98 /* AppDelegate.swift in Sources */,
 				03A11159249618B600A3ED98 /* String+Extensions.swift in Sources */,
-				03EE7AF3249B99C800BB7929 /* CountriesViewController.swift in Sources */,
 				03A1115B24961CDC00A3ED98 /* DateViewController.swift in Sources */,
+				03510F0D249E9560002CB5D4 /* Country.swift in Sources */,
 				03A1112E249607EA00A3ED98 /* SceneDelegate.swift in Sources */,
+				03510F1D249EA470002CB5D4 /* SignInViewController.swift in Sources */,
 				03A1116124962C5D00A3ED98 /* ImageViewController.swift in Sources */,
-				03A1114C2496151000A3ED98 /* NetworkManager.swift in Sources */,
 				03EE7AEF249B829000BB7929 /* PhoneViewController.swift in Sources */,
 				03A11154249615BA00A3ED98 /* AuthError.swift in Sources */,
+				03510F26249ED2DE002CB5D4 /* InfoViewController.swift in Sources */,
 				03A111442496140700A3ED98 /* User.swift in Sources */,
 				03A11152249615B500A3ED98 /* AuthManager.swift in Sources */,
+				03510F14249E9B32002CB5D4 /* CountriesViewController.swift in Sources */,
 				03A11150249615AF00A3ED98 /* Validators.swift in Sources */,
 				03A1115F2496231400A3ED98 /* Alerts.swift in Sources */,
 				03A1114124960CE200A3ED98 /* Constants.swift in Sources */,
 				03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */,
+				03510F1B249E9C97002CB5D4 /* NetworkError.swift in Sources */,
+				03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
