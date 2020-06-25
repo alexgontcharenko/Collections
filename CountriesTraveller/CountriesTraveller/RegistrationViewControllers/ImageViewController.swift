@@ -142,8 +142,17 @@ extension ImageViewController: UIImagePickerControllerDelegate {
         let imageWidth = CGFloat(600.0)
         if selectedImage.size.height > imageWidth ||
             selectedImage.size.width > imageWidth {
-            user.image = selectedImage
-            self.prepareAvatar()
+            user.image = selectedImage            // upload an image to the storage, get the URL,  set to the user URL string
+            StorageManager.shared.upload(userPhoto: selectedImage, userId: user.email) { (result) in
+                switch result {
+                case .success(let url):
+                    self.user.imageURL = url.absoluteString
+                    self.prepareAvatar()
+                case .failure(let error):
+                    self.showAlert(title: kAlertTitleWrong, message: error.localizedDescription)
+                }
+            }
+            
             //imageToSave = UIImage.resizeImage(sourceImage: selectedImage, scaledToWidth: imageWidth)
         }
         

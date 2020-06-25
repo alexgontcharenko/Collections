@@ -15,7 +15,19 @@ struct UserProfile {
     var email: String = ""
     var password: String = ""
     var gender: String = ""
+    var imageURL: String = ""
     var image: UIImage?
     var bornDate: String = ""
     var phone: String = ""
+    
+    var representation: [String: Any] {
+        var rep = ["email": email]
+        rep["firstName"] = firstName
+        rep["lastName"] = lastName
+        rep["bornDate"] = bornDate
+        rep["gender"] = gender
+        rep["phone"] = phone
+        rep["imageURL"] = imageURL
+        return rep
+    }
 }

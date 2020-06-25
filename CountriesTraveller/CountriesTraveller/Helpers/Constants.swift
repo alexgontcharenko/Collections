@@ -41,4 +41,9 @@ let kLogoutButtonTitle = "Log Out"
 let kFinishButtonTitle = "Finish"
 
 
+// MARK: - Errors
+let kFillInAllTheInputFields = "Fill in all the fields!"
+let kPhotoNotExist = "Photo doesn't exist"
+
+
 

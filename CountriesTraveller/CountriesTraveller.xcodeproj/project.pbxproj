@@ -18,6 +18,10 @@
 		03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F21249EC8EF002CB5D4 /* CountryCell.swift */; };
 		03510F24249EC8EF002CB5D4 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03510F22249EC8EF002CB5D4 /* CountryCell.xib */; };
 		03510F26249ED2DE002CB5D4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F25249ED2DE002CB5D4 /* InfoViewController.swift */; };
+		038907AB249F43630009B497 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AA249F43630009B497 /* FirestoreManager.swift */; };
+		038907AD249F43680009B497 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AC249F43680009B497 /* FirestoreError.swift */; };
+		038907AF249F436C0009B497 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AE249F436C0009B497 /* StorageManager.swift */; };
+		038907B3249F47B00009B497 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907B2249F47AF0009B497 /* UIImage + Extension.swift */; };
 		03A1112C249607EA00A3ED98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112B249607EA00A3ED98 /* AppDelegate.swift */; };
 		03A1112E249607EA00A3ED98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112D249607EA00A3ED98 /* SceneDelegate.swift */; };
 		03A11130249607EA00A3ED98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1112F249607EA00A3ED98 /* LoginViewController.swift */; };
@@ -50,6 +54,10 @@
 		03510F21249EC8EF002CB5D4 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		03510F22249EC8EF002CB5D4 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		03510F25249ED2DE002CB5D4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		038907AA249F43630009B497 /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		038907AC249F43680009B497 /* FirestoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		038907AE249F436C0009B497 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		038907B2249F47AF0009B497 /* UIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		03A11128249607EA00A3ED98 /* CountriesTraveller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesTraveller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A1112B249607EA00A3ED98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03A1112D249607EA00A3ED98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +121,16 @@
 				03510F22249EC8EF002CB5D4 /* CountryCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		038907B1249F43880009B497 /* FirestoreManager */ = {
+			isa = PBXGroup;
+			children = (
+				038907AE249F436C0009B497 /* StorageManager.swift */,
+				038907AC249F43680009B497 /* FirestoreError.swift */,
+				038907AA249F43630009B497 /* FirestoreManager.swift */,
+			);
+			path = FirestoreManager;
 			sourceTree = "<group>";
 		};
 		03A1111F249607EA00A3ED98 = {
@@ -183,6 +201,7 @@
 		03A11155249615DE00A3ED98 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				038907B1249F43880009B497 /* FirestoreManager */,
 				03510F15249E9C97002CB5D4 /* NetworkManager */,
 				03A1114E2496159F00A3ED98 /* AuthManager */,
 			);
@@ -205,6 +224,7 @@
 		03A11157249618A300A3ED98 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				038907B2249F47AF0009B497 /* UIImage + Extension.swift */,
 				03A11158249618B600A3ED98 /* String+Extensions.swift */,
 			);
 			path = Extensions;
@@ -373,7 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038907AB249F43630009B497 /* FirestoreManager.swift in Sources */,
 				03510F1A249E9C97002CB5D4 /* NetworkManager.swift in Sources */,
+				038907AF249F436C0009B497 /* StorageManager.swift in Sources */,
 				03510F19249E9C97002CB5D4 /* NetworkHelpers.swift in Sources */,
 				03A11130249607EA00A3ED98 /* LoginViewController.swift in Sources */,
 				03A1112C249607EA00A3ED98 /* AppDelegate.swift in Sources */,
@@ -392,6 +414,8 @@
 				03A11150249615AF00A3ED98 /* Validators.swift in Sources */,
 				03A1115F2496231400A3ED98 /* Alerts.swift in Sources */,
 				03A1114124960CE200A3ED98 /* Constants.swift in Sources */,
+				038907B3249F47B00009B497 /* UIImage + Extension.swift in Sources */,
+				038907AD249F43680009B497 /* FirestoreError.swift in Sources */,
 				03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */,
 				03510F1B249E9C97002CB5D4 /* NetworkError.swift in Sources */,
 				03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */,

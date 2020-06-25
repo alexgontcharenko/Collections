@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="2jH-0J-UTe">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oMQ-NZ-m6q" customClass="MainViewController" customModule="RWRC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exu-rO-IDl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn0-mg-KLr">
+                                <rect key="frame" x="355" y="64" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="rUk-VL-Q6S" kind="presentation" id="ggS-c7-Oar"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rwdevcon-bg" translatesAutoresizingMaskIntoConstraints="NO" id="VaF-QB-fdk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="o2s-1P-8Mr" firstAttribute="trailing" secondItem="cn0-mg-KLr" secondAttribute="trailing" constant="20" id="WW4-QQ-fXf"/>
+                            <constraint firstAttribute="bottom" secondItem="VaF-QB-fdk" secondAttribute="bottom" id="lmm-tL-c2y"/>
+                            <constraint firstAttribute="trailing" secondItem="VaF-QB-fdk" secondAttribute="trailing" id="vTz-zx-XZG"/>
+                            <constraint firstItem="VaF-QB-fdk" firstAttribute="top" secondItem="exu-rO-IDl" secondAttribute="top" id="wnX-nG-saj"/>
+                            <constraint firstItem="cn0-mg-KLr" firstAttribute="top" secondItem="o2s-1P-8Mr" secondAttribute="top" constant="20" id="xM0-Wg-sOD"/>
+                            <constraint firstItem="VaF-QB-fdk" firstAttribute="leading" secondItem="exu-rO-IDl" secondAttribute="leading" id="zfr-CD-d6v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o2s-1P-8Mr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="epZ-Tq-1cT">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="Tb0-lG-f7y"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImage" destination="VaF-QB-fdk" id="wRh-G7-jZ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crI-mV-1EK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.04347826086962" y="133.92857142857142"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="TX9-ON-Dzy">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OOV-aa-ZII" customClass="SecondViewController" customModule="RWRC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qII-5y-uS1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs5-dj-5zL">
+                                <rect key="frame" x="50" y="50" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onTapLoginButton:" destination="OOV-aa-ZII" eventType="touchUpInside" id="pWq-PN-9tm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zs5-dj-5zL" firstAttribute="top" secondItem="Rxo-si-zOO" secondAttribute="top" constant="50" id="bhG-AV-sCN"/>
+                            <constraint firstItem="zs5-dj-5zL" firstAttribute="leading" secondItem="Rxo-si-zOO" secondAttribute="leading" constant="50" id="hK7-zG-aZb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rxo-si-zOO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Lp-gT-ZtJ"/>
+                    <connections>
+                        <outlet property="loginButton" destination="zs5-dj-5zL" id="IVk-tm-qh3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwt-ob-7XE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3017.3913043478265" y="131.91964285714286"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="Int-tK-EvP">
+            <objects>
+                <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="rUk-VL-Q6S" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t9s-Bj-E0g">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="presentDuration">
+                            <real key="value" value="1.3999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="160"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="OOV-aa-ZII" kind="relationship" relationship="rootViewController" id="tcF-M9-I5P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ztE-n3-iXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107.2463768115945" y="131.91964285714286"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rwdevcon-bg" width="1104" height="1104"/>
+    </resources>
+</document>

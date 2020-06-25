@@ -10,4 +10,7 @@ target 'CountriesTraveller' do
   pod 'FirebaseUI/Auth'
   pod 'SVProgressHUD'
   pod "FlagPhoneNumber"
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  
 end

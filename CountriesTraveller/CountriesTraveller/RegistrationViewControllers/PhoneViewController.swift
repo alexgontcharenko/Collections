@@ -46,7 +46,7 @@ class PhoneViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func onTapFinishButton() {
-        toSignInScreen()
+        saveUserToDatabase()
     }
     
     func toSignInScreen() {
@@ -64,6 +64,17 @@ class PhoneViewController: UIViewController, UITextFieldDelegate {
         listController.setup(repository: phoneNumberTextField.countryRepository)
         listController.didSelect = { [weak self] country in
         self?.phoneNumberTextField.setFlag(countryCode: country.code)
+        }
+    }
+    
+    func saveUserToDatabase() {
+        FirestoreManager.shared.saveProfile(user: user) { (result) in
+            switch result {
+            case .success(_):
+                self.toSignInScreen()
+            case .failure(let error):
+                self.showAlert(title: kAlertTitleWrong, message: error.localizedDescription)
+            }
         }
     }
     
