@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgn-sa-eln">
-                                <rect key="frame" x="177" y="772" width="60" height="60"/>
+                                <rect key="frame" x="137" y="772" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="GZj-SB-FJK"/>
                                     <constraint firstAttribute="height" constant="60" id="t1V-rz-HCI"/>
@@ -27,13 +27,23 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8T-7w-G3i">
+                                <rect key="frame" x="217" y="772" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="h5s-VD-dfa"/>
+                                    <constraint firstAttribute="width" constant="60" id="rMd-c6-Vpk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="c8T-7w-G3i" secondAttribute="bottom" constant="30" id="LSt-Qe-yS0"/>
                             <constraint firstItem="YRA-aJ-2cH" firstAttribute="leading" secondItem="QAZ-aj-buO" secondAttribute="leading" id="OKc-ci-gMl"/>
                             <constraint firstItem="QAZ-aj-buO" firstAttribute="bottom" secondItem="wgn-sa-eln" secondAttribute="bottom" constant="30" id="OVK-pr-84d"/>
                             <constraint firstItem="YRA-aJ-2cH" firstAttribute="top" secondItem="QAZ-aj-buO" secondAttribute="top" id="Qgy-bL-eO2"/>
-                            <constraint firstItem="wgn-sa-eln" firstAttribute="centerX" secondItem="QAZ-aj-buO" secondAttribute="centerX" id="lLa-QW-x9Z"/>
+                            <constraint firstItem="c8T-7w-G3i" firstAttribute="centerX" secondItem="QAZ-aj-buO" secondAttribute="centerX" constant="40" id="Yho-nh-9oZ"/>
+                            <constraint firstItem="wgn-sa-eln" firstAttribute="centerX" secondItem="QAZ-aj-buO" secondAttribute="centerX" constant="-40" id="lLa-QW-x9Z"/>
                             <constraint firstItem="QAZ-aj-buO" firstAttribute="trailing" secondItem="YRA-aJ-2cH" secondAttribute="trailing" id="uJ4-4z-I4k"/>
                             <constraint firstItem="QAZ-aj-buO" firstAttribute="bottom" secondItem="YRA-aJ-2cH" secondAttribute="bottom" id="wkc-5N-rcJ"/>
                         </constraints>
@@ -41,6 +51,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Countries" id="uvg-SM-Osh"/>
                     <connections>
+                        <outlet property="cameraButton" destination="c8T-7w-G3i" id="MQ0-h6-Nwg"/>
                         <outlet property="countriesTableView" destination="YRA-aJ-2cH" id="cbe-PW-CtZ"/>
                         <outlet property="logoutButton" destination="wgn-sa-eln" id="hav-h4-bwJ"/>
                     </connections>
@@ -139,6 +150,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73x-nF-QAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2012" y="44"/>
+        </scene>
+        <!--Translate View Controller-->
+        <scene sceneID="P5K-QX-BKB">
+            <objects>
+                <viewController storyboardIdentifier="TranslateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IgF-gq-EYS" customClass="TranslateViewController" customModule="CountriesTraveller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ujI-PL-Edo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUS-Vj-JpJ">
+                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SUS-Vj-JpJ" firstAttribute="centerY" secondItem="9Tt-sn-gzq" secondAttribute="centerY" id="2kr-hJ-PBN"/>
+                            <constraint firstItem="SUS-Vj-JpJ" firstAttribute="centerX" secondItem="9Tt-sn-gzq" secondAttribute="centerX" id="6fp-SR-L0N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Tt-sn-gzq"/>
+                    </view>
+                    <connections>
+                        <outlet property="textLabel" destination="SUS-Vj-JpJ" id="H26-6z-Mnx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SrG-TI-SJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986.9565217391305" y="43.526785714285715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wBS-yc-BGn">

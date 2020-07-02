@@ -8,11 +8,14 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class CountriesViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var countriesTableView: UITableView!
+    @IBOutlet weak var cameraButton: UIButton!
     
+    var someText: String?
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredCountries = Countries()
     private var countries = Countries()
@@ -31,6 +34,22 @@ class CountriesViewController: UIViewController {
         prepareTableView()
         prepareSearchController()
         fetchCountries()
+        prepareCameraButton()
+    }
+    
+    func prepareCameraButton() {
+        cameraButton.setTitle(kCameraButtonTitle, for: .normal)
+        cameraButton.setTitleColor(UIColor.black, for: .normal)
+        cameraButton.layer.cornerRadius = 0.5 * logoutButton.frame.size.width
+        cameraButton.clipsToBounds = true
+        cameraButton.backgroundColor = UIColor.lightText
+        view.bringSubviewToFront(cameraButton)
+        
+        cameraButton.addTarget(self, action: #selector(onTapCameraButton), for: .touchUpInside)
+    }
+    
+    @objc func onTapCameraButton() {
+        onPhotoAction()
     }
     
     
@@ -181,4 +200,98 @@ extension CountriesViewController: UISearchResultsUpdating {
             }
         }
     }
+    
+    func onPhotoAction() {
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        // create an action
+        let firstAction: UIAlertAction = UIAlertAction(title: "Take Picture", style: .default) { action -> Void in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                if response {
+                    //access granted
+                    self.onOpenMedia(source: .camera)
+                } else {
+
+                }
+            }
+            print("First Action pressed")
+        }
+        
+        let secondAction: UIAlertAction = UIAlertAction(title: "Choose from gallery", style: .default) { action -> Void in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                if response {
+                    //access granted
+                    self.onOpenMedia(source: .photoLibrary)
+                } else {
+
+                }
+            }
+            print("Second Action pressed")
+        }
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+        // add actions
+        actionSheetController.addAction(firstAction)
+        actionSheetController.addAction(secondAction)
+        actionSheetController.addAction(cancelAction)
+        
+        // present an actionSheet...
+        present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func onOpenMedia(source: UIImagePickerController.SourceType) {
+        DispatchQueue.main.async {
+            let pickerController = UIImagePickerController()
+            pickerController.delegate = self
+            pickerController.allowsEditing = true
+            pickerController.mediaTypes = ["public.image", "public.movie"]
+            pickerController.sourceType = source
+            
+            self.present(pickerController, animated: true, completion: nil)
+        }
+    }
+    
+    func onUploadImage(image: UIImage) {
+        
+        StorageManager.shared.uploadImagetoText(photo: image) { (result) in
+            switch result {
+                
+            case .success(let url):
+                NetworkManager.shared.getImagetoText(url:url) { (result) in
+                    switch result {
+                    case .success(let text):
+                        self.someText = text as String
+                        print(self.someText!)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    }
+            case .failure(_):
+                print("error")
+            }
+        }
+    }
+    
+}
+
+extension CountriesViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+        
+        onUploadImage(image: selectedImage)
+        let vc = storyboard?.instantiateViewController(identifier: "TranslateViewController") as! TranslateViewController
+        vc.someText = self.someText
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CountriesViewController: UINavigationControllerDelegate {
+    
 }

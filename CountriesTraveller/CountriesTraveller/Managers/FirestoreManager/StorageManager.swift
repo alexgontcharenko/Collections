@@ -44,4 +44,26 @@ class StorageManager {
             }
         }
     }
+    
+    func uploadImagetoText(photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let scaledImage = photo.scaleToSafeUploadSize else { return }
+        guard let imageData = scaledImage.jpegData(compressionQuality: 0.4) else { return }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        let convertPhotoToText = "convertPhotoToText"
+        avatarsReference.child(convertPhotoToText).putData(imageData, metadata: metadata) { (metadata, error) in
+            guard let _ = metadata else {
+                completion(.failure(error!))
+                return
+            }
+            self.avatarsReference.child(convertPhotoToText).downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                completion(.success(downloadURL))
+            }
+        }
+    }
 }

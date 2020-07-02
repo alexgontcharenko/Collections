@@ -18,6 +18,7 @@
 		03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F21249EC8EF002CB5D4 /* CountryCell.swift */; };
 		03510F24249EC8EF002CB5D4 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03510F22249EC8EF002CB5D4 /* CountryCell.xib */; };
 		03510F26249ED2DE002CB5D4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03510F25249ED2DE002CB5D4 /* InfoViewController.swift */; };
+		0373764824ACDA0F0053FF96 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373764724ACDA0F0053FF96 /* TranslateViewController.swift */; };
 		038907AB249F43630009B497 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AA249F43630009B497 /* FirestoreManager.swift */; };
 		038907AD249F43680009B497 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AC249F43680009B497 /* FirestoreError.swift */; };
 		038907AF249F436C0009B497 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038907AE249F436C0009B497 /* StorageManager.swift */; };
@@ -54,6 +55,7 @@
 		03510F21249EC8EF002CB5D4 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		03510F22249EC8EF002CB5D4 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		03510F25249ED2DE002CB5D4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		0373764724ACDA0F0053FF96 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		038907AA249F43630009B497 /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		038907AC249F43680009B497 /* FirestoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		038907AE249F436C0009B497 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				03510F1E249EC8A2002CB5D4 /* CustomCell */,
 				03510F13249E9B32002CB5D4 /* CountriesViewController.swift */,
 				03510F25249ED2DE002CB5D4 /* InfoViewController.swift */,
+				0373764724ACDA0F0053FF96 /* TranslateViewController.swift */,
 			);
 			path = CountriesViewControllers;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				03A1114124960CE200A3ED98 /* Constants.swift in Sources */,
 				038907B3249F47B00009B497 /* UIImage + Extension.swift in Sources */,
 				038907AD249F43680009B497 /* FirestoreError.swift in Sources */,
+				0373764824ACDA0F0053FF96 /* TranslateViewController.swift in Sources */,
 				03EE7AED2497C50000BB7929 /* LocationViewController.swift in Sources */,
 				03510F1B249E9C97002CB5D4 /* NetworkError.swift in Sources */,
 				03510F23249EC8EF002CB5D4 /* CountryCell.swift in Sources */,

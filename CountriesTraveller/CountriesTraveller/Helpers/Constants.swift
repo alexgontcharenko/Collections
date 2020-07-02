@@ -39,7 +39,7 @@ let kLoginButtonTitle = "Login"
 let kRegisterButtonTitle = "Register"
 let kLogoutButtonTitle = "Log Out"
 let kFinishButtonTitle = "Finish"
-
+let kCameraButtonTitle = "Camera"
 
 // MARK: - Errors
 let kFillInAllTheInputFields = "Fill in all the fields!"
