@@ -18,6 +18,8 @@
 		03CC831F24B0F8A100ED1BCF /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC831C24B0F8A100ED1BCF /* NetworkHelpers.swift */; };
 		03CC832024B0F8A100ED1BCF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC831D24B0F8A100ED1BCF /* NetworkManager.swift */; };
 		03CC832124B0F8A100ED1BCF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC831E24B0F8A100ED1BCF /* NetworkError.swift */; };
+		03CC832A24B1301600ED1BCF /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC832924B1301600ED1BCF /* Validators.swift */; };
+		03CC832C24B1318C00ED1BCF /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC832B24B1318C00ED1BCF /* Alerts.swift */; };
 		CF5C2B4439B414912BF26B9A /* Pods_VINdecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5761BFEA92037DBBE1F962E7 /* Pods_VINdecode.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		03CC831C24B0F8A100ED1BCF /* NetworkHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
 		03CC831D24B0F8A100ED1BCF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		03CC831E24B0F8A100ED1BCF /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		03CC832924B1301600ED1BCF /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		03CC832B24B1318C00ED1BCF /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		560445C86EF08A00E47D86BD /* Pods-VINdecode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VINdecode.release.xcconfig"; path = "Target Support Files/Pods-VINdecode/Pods-VINdecode.release.xcconfig"; sourceTree = "<group>"; };
 		5761BFEA92037DBBE1F962E7 /* Pods_VINdecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VINdecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60694E52ACD760270D77EAF1 /* Pods-VINdecode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VINdecode.debug.xcconfig"; path = "Target Support Files/Pods-VINdecode/Pods-VINdecode.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,12 +78,13 @@
 			isa = PBXGroup;
 			children = (
 				03CC831B24B0F8A100ED1BCF /* NetworkManager */,
-				03307DA424B0921500D10591 /* AppDelegate.swift */,
 				03CC831824B0F49C00ED1BCF /* Models */,
-				03307DA624B0921500D10591 /* SceneDelegate.swift */,
+				03CC832824B1300800ED1BCF /* Helpers */,
+				03307DAA24B0921500D10591 /* Main.storyboard */,
+				03307DA424B0921500D10591 /* AppDelegate.swift */,
 				03307DA824B0921500D10591 /* MainViewController.swift */,
 				03CC830F24B0EEFC00ED1BCF /* InfoViewController.swift */,
-				03307DAA24B0921500D10591 /* Main.storyboard */,
+				03307DA624B0921500D10591 /* SceneDelegate.swift */,
 				03307DAD24B0921700D10591 /* Assets.xcassets */,
 				03307DAF24B0921700D10591 /* LaunchScreen.storyboard */,
 				03307DB224B0921700D10591 /* Info.plist */,
@@ -103,6 +108,15 @@
 				03CC831E24B0F8A100ED1BCF /* NetworkError.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		03CC832824B1300800ED1BCF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				03CC832924B1301600ED1BCF /* Validators.swift */,
+				03CC832B24B1318C00ED1BCF /* Alerts.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B5D5C5A92A742F4B69481D05 /* Pods */ = {
@@ -241,9 +255,11 @@
 				03CC832124B0F8A100ED1BCF /* NetworkError.swift in Sources */,
 				03CC831A24B0F4AE00ED1BCF /* Car.swift in Sources */,
 				03307DA924B0921500D10591 /* MainViewController.swift in Sources */,
+				03CC832A24B1301600ED1BCF /* Validators.swift in Sources */,
 				03CC832024B0F8A100ED1BCF /* NetworkManager.swift in Sources */,
 				03307DA524B0921500D10591 /* AppDelegate.swift in Sources */,
 				03CC831024B0EEFC00ED1BCF /* InfoViewController.swift in Sources */,
+				03CC832C24B1318C00ED1BCF /* Alerts.swift in Sources */,
 				03307DA724B0921500D10591 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

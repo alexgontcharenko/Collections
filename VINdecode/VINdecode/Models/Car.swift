@@ -19,8 +19,10 @@ struct Car: Codable {
 struct Specification: Codable {
     let vin, year, make, model: String
     let trimLevel, engine, style, madeIn: String
-    let steeringType, antiBrakeSystem, tankSize, overallHeight: String
-    let overallLength, overallWidth, standardSeating, optionalSeating: String
+    let steeringType, antiBrakeSystem: String
+    let tankSize: JSONNull?
+    let overallHeight, overallLength, overallWidth, standardSeating: String
+    let optionalSeating: JSONNull?
     let highwayMileage, cityMileage: String
 
     enum CodingKeys: String, CodingKey {
@@ -41,31 +43,29 @@ struct Specification: Codable {
     }
 }
 
-struct Specs {
-    let vin, year, make, model: String
-    let trimLevel, engine, style, madeIn: String
-    let steeringType, antiBrakeSystem, tankSize, overallHeight: String
-    let overallLength, overallWidth, standardSeating, optionalSeating: String
-    let highwayMileage, cityMileage: String
-    
-    init?(specData: Specification) {
-        vin = specData.vin
-        year = specData.year
-        make = specData.make
-        model = specData.model
-        trimLevel = specData.trimLevel
-        engine = specData.engine
-        style = specData.style
-        madeIn = specData.madeIn
-        steeringType = specData.steeringType
-        antiBrakeSystem = specData.antiBrakeSystem
-        tankSize = specData.tankSize
-        overallHeight = specData.overallHeight
-        overallLength = specData.overallLength
-        overallWidth = specData.overallWidth
-        standardSeating = specData.standardSeating
-        optionalSeating = specData.optionalSeating
-        highwayMileage = specData.highwayMileage
-        cityMileage = specData.cityMileage
+// MARK: - Encode/decode helpers
+
+class JSONNull: Codable, Hashable {
+
+    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+        return true
+    }
+
+    public var hashValue: Int {
+        return 0
+    }
+
+    public init() {}
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if !container.decodeNil() {
+            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encodeNil()
     }
 }

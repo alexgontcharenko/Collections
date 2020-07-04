@@ -35,42 +35,4 @@ class NetworkHelpers {
                                     "x-rapidapi-key" : apiKey]
         return headers
     }
-    
-    // MARK: - Helper methods for Parse
-    
-//    func parseCountries(_ data: Data) -> Countries? {
-//        do {
-//            let countries = try JSONDecoder().decode(Countries.self, from: data)
-//            return countries
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        return nil
-//    }
-    
-    func parseTranslatedText(_ data: Data) -> String? {
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
-                guard let text = json["translatedText"] as? String else { return nil }
-                
-                return text
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
-    }
-    
-    func parseVin(_ data: Data) -> Specs? {
-        do {
-            let car = try JSONDecoder().decode(Car.self, from: data)
-            let specsData = car.specification
-            let specs = Specs(specData: specsData)
-            return specs
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
-    }
-    
 }

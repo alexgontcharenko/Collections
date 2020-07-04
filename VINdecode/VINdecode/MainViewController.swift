@@ -13,9 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var vinField: UITextField!
     @IBOutlet weak var decodeButton: UIButton!
     
-    var car = Car()
-    var specs: Specs?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
@@ -37,20 +34,20 @@ class MainViewController: UIViewController {
     }
     
     func prepareDecodeButton() {
-        decodeButton.addTarget(self, action: #selector(getCarInfo), for: .touchUpInside)
+        decodeButton.layer.cornerRadius = 0.5 * decodeButton.frame.size.width
+        decodeButton.clipsToBounds = true
+        decodeButton.backgroundColor = .clear
+        decodeButton.addTarget(self, action: #selector(onNextScreen), for: .touchUpInside)
     }
     
-    @objc func getCarInfo() {
-        NetworkManager.shared.getVinDecode(vin: "4F2YU09161KM33122") { (result) in
-            switch result {case .success(let data):
-                guard let data = data else {return}
-                print(String(data: data, encoding: .utf8)!)
-                if let specsData = NetworkHelpers.shared.parseVin(data) {
-                    self.specs = specsData
-                }
-            case .failure(let error):
-                print(error.localizedDescription) 
-            }
+    @objc func onNextScreen() {
+        if isValidNameField(text: vinField.text!) {
+            let vc = self.storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
+            vc.vin = vinField.text!
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            showAlert(title: "Warning", message: "VIN code is wrong")
         }
     }
     
