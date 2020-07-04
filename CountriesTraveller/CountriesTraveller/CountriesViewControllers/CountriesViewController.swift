@@ -14,8 +14,8 @@ class CountriesViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var countriesTableView: UITableView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var someText: String?
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredCountries = Countries()
     private var countries = Countries()
@@ -64,6 +64,7 @@ class CountriesViewController: UIViewController {
         
         backgroundImageView.image = UIImage(named: "background")
         view.sendSubviewToBack(backgroundImageView)
+        activityIndicator.isHidden = true
     }
     
     func prepareSearchController() {
@@ -251,7 +252,8 @@ extension CountriesViewController: UISearchResultsUpdating {
     }
     
     func onUploadImage(image: UIImage) {
-        
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         StorageManager.shared.uploadImagetoText(photo: image) { (result) in
             switch result {
                 
@@ -259,8 +261,23 @@ extension CountriesViewController: UISearchResultsUpdating {
                 NetworkManager.shared.getImagetoText(url:url) { (result) in
                     switch result {
                     case .success(let text):
-                        self.someText = text as String
-                        print(self.someText!)
+                        NetworkManager.shared.getTranslatedText(text: text) { (result) in
+                            switch result {
+                                
+                            case .success(let data):
+                                guard let data = data else { return }
+                                guard let text = NetworkHelpers.shared.parseTranslatedText(data) else { return }
+                                
+                                DispatchQueue.main.async {
+                                    self.toNextScreen(text: text)
+                                    self.activityIndicator.stopAnimating()
+                                    self.activityIndicator.isHidden = true
+                                }
+                                
+                            case .failure(let error):
+                                self.showAlert(title: kAlertTitleWrong, message: error.localizedDescription)
+                            }
+                        }
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -271,6 +288,14 @@ extension CountriesViewController: UISearchResultsUpdating {
         }
     }
     
+    func toNextScreen(text: String) {
+        DispatchQueue.main.async {
+            let vc = self.storyboard?.instantiateViewController(identifier: "TranslateViewController") as! TranslateViewController
+            vc.someText = text
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension CountriesViewController: UIImagePickerControllerDelegate {
@@ -279,12 +304,7 @@ extension CountriesViewController: UIImagePickerControllerDelegate {
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
         
         onUploadImage(image: selectedImage)
-        let vc = storyboard?.instantiateViewController(identifier: "TranslateViewController") as! TranslateViewController
-        vc.someText = self.someText
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.dismiss(animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

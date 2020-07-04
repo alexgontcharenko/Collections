@@ -167,4 +167,33 @@ class NetworkManager {
             }
         }
     }
+    
+    func getVinDecode(vin: String, completion: @escaping (Result<Data?, Error>) -> Void) {
+        let headers = [
+            "x-rapidapi-host": "vindecoder.p.rapidapi.com",
+            "x-rapidapi-key": "499d366ab9mshbf8e9b29184ba1dp183b87jsn72eebb802141"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://vindecoder.p.rapidapi.com/decode_vin?vin=\(vin)")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                completion(.failure(error!))
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse as Any)
+            }
+            if let data = data {
+                completion(.success(data))
+            }
+        })
+
+        dataTask.resume()
+    }
+    
 }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "F774866C-FD42-4DB6-9CFE-97EE51A333CF"
+   uuid = "D08F62F8-F450-4A8F-AE4B-E7D519FF4838"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E9D509F2-8065-4EE7-9CC3-5436AFE85769"
-            shouldBeEnabled = "No"
+            uuid = "EDD1C370-B4E8-48FC-A93B-88B876FF2484"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CountriesTraveller/Helpers/Validators.swift"
+            filePath = "VINdecode/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "isValidNameField(name:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getCarInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,36 +7,55 @@
 //
 
 import UIKit
-import Alamofire
 
 class TranslateViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var backButton: UIButton!
     
     var someText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textLabel.text = ""
+        setBackground()
+        prepareLabel()
+        prepareBackButton()
     }
     
-    func getTranslatedText() {
-        NetworkManager.shared.getTranslatedText(text: someText!) { (result) in
-            switch result {
-                
-            case .success(let data):
-                guard let data = data else { return }
-                guard let text = NetworkHelpers.shared.parseTranslatedText(data) else { return }
-                
-                DispatchQueue.main.async {
-                    self.textLabel.text = text
-                    print(text)
-                }
-                
-            case .failure(let error):
-                self.showAlert(title: kAlertTitleWrong, message: error.localizedDescription)
-            }
-        }
+    func setBackground() {
+        navigationController?.navigationBar.isHidden = true
+        let backgroundImageView = UIImageView()
+        view.addSubview(backgroundImageView)
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        backgroundImageView.image = UIImage(named: "background")
+        view.sendSubviewToBack(backgroundImageView)
+    }
+    
+    func prepareLabel() {
+        textLabel.minimumScaleFactor = 0.1
+        textLabel.text = someText
+    }
+    
+    func prepareBackButton() {
+        backButton.setTitle(kBackButtonTitle, for: .normal)
+        backButton.setTitleColor(UIColor.black, for: .normal)
+        backButton.layer.cornerRadius = 0.5 * backButton.frame.size.width
+        backButton.clipsToBounds = true
+        backButton.backgroundColor = UIColor.lightText
+        
+        backButton.addTarget(self, action: #selector(onBackButton), for: .touchUpInside)
+    }
+    
+    @objc func onBackButton() {
+        let storyboard = UIStoryboard(name: "Countries", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CountriesNavigationController")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
     }
     
 }
