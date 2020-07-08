@@ -38,10 +38,10 @@ class InfoViewController: UIViewController {
     }
     
     @objc func onBackButton() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainViewController")
-        vc?.modalPresentationStyle = .fullScreen
-        vc?.modalTransitionStyle = .crossDissolve
-        self.present(vc!, animated: true)
+        let vc = self.storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+        self.vin = ""
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setBackground() {
