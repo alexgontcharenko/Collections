@@ -26,6 +26,9 @@ class NetworkDataFetcher: DataFetcher {
                 print(error.localizedDescription)
                 response(nil)
             }
+            
+            let str = String(data: data!, encoding: .utf8)
+            print(str!)
     
             let decoded = self.decodeJSON(type: T.self, from: data)
             response(decoded)
